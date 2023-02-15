@@ -8,11 +8,11 @@ def start(message, fs_videos, fs_mp3s, channel):
     # empty temp file
     tf = tempfile.NamedTemporaryFile()
     # video contents
-    out=fs_videos(ObjectId(message['video_fid']))
+    out=fs_videos.get(ObjectId(message["video_fid"]))
     # add video content to empty file
     tf.write(out.read())
     # create audio from temp videofile
-    audio = moviepy.editor.VideoClip(tf.name).audio
+    audio = moviepy.editor.VideoFileClip(tf.name).audio
     tf.close()
 
     # write the audio to the file

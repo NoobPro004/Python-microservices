@@ -19,7 +19,7 @@ def main():
             channel.basic_ack(delivery_tag=method.delivery_tag)
 
     channel.basic_consume(
-        queue=os.environ.get("MP3 _QUEUE"),
+        queue=os.environ.get("MP3_QUEUE"),
         on_message_callback=callback
     )
 

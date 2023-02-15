@@ -1,10 +1,10 @@
-import smtplib, os
+import smtplib, os, json
 from email.message import EmailMessage
 
 def notification(message):
     try:
         message = json.loads(message)
-        mp3_fid = message['mp3_fid']
+        mp3_fid = message["mp3_fid"]
         sender_address = os.environ.get("GMAIL_ADDRESS")
         sender_password = os.environ.get("GMAIL_PASSWORD")
         receiver_address =  message['username']
@@ -18,7 +18,7 @@ def notification(message):
         session.starttls()
         session.login(sender_address,sender_password)
         session.send_message(msg,sender_address,receiver_address)
-        session.close()
+        session.quit()
         print("Mail Sent")
     except Exception as err:
         print(err)

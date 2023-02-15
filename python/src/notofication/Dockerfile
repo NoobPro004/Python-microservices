@@ -11,4 +11,4 @@ COPY . /app/
 
 EXPOSE 8080
 
-CMD ['python3','consumer.py']
+CMD ["python3","consumer.py"]

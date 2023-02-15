@@ -6,7 +6,7 @@ def login(request):
         return None,("missing credentials",401)
     
     basicAuth = (auth.username,auth.password)
-    response = request.post(
+    response = requests.post(
         f"http://{os.environ.get('AUTH_SVC_ADDRESS')}/login",
         auth=basicAuth
     )
