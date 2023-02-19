@@ -1,5 +1,6 @@
 import Axios from "axios"
 import { error } from "console"
+import { useAuth } from "../context/auth"
 
 let urls = {
     test: `${process.env.NEXT_PUBLIC_FRONTEND} || http://localhost:3000`,
@@ -27,4 +28,12 @@ error => {
 }
 )
 
+api.interceptors.response.use((config)=>{
+    // TODO use logout when response code is not authenticated
+    return config
+},
+error => {
+    Promise.reject(error)
+}
+)
 export default api

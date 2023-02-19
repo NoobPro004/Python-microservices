@@ -12,7 +12,7 @@ export default function Home() {
 
   useEffect(()=>{
     if(!user){
-      router.push('/login?error=please login first')
+      router.push('/login')
       return 
     }
 

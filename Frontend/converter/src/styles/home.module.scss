@@ -1,5 +1,16 @@
 .allCenter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.crossFile {
+  margin-left: 20px;
+  color: red;
+  background-color: blue;
+  padding: 4px;
+  cursor: pointer;
 }

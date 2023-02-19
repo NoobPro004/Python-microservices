@@ -1,0 +1,22 @@
+.verticalFlex {
+  display: flex;
+}
+
+.left {
+  width: 50%;
+  background-color: #ffc72c;
+  height: 100vh;
+}
+
+.right {
+  background-color: white;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginForm {
+  padding: 80px 90px 45px 0px;
+  border: 1px solid gray;
+}
